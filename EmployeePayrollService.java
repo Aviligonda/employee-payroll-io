@@ -53,6 +53,12 @@ public class EmployeePayrollService {
         if (ioService.equals(IOService.FILE_IO))
             new EmployeePayrollFileIOService().printData();
     }
-    public enum IOService {CONSOLE_IO, FILE_IO, DB_IO, REST_ID}
 
+    public long readEmployeePayroll(IOService ioService) {
+        if (ioService.equals(IOService.FILE_IO))
+            this.employeePayrollList = new EmployeePayrollFileIOService().readData();
+        return employeePayrollList.size();
+    }
+
+    public enum IOService {CONSOLE_IO, FILE_IO, DB_IO, REST_ID}
 }
