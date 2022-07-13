@@ -18,6 +18,7 @@ public class EmployeePayrollServiceTest {
         employeePayRollService.writeEmployeePayrollDara(EmployeePayrollService.IOService.FILE_IO);
         long entries = employeePayRollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
         Assert.assertEquals(3, entries);
+        employeePayRollService.printData(EmployeePayrollService.IOService.FILE_IO);
     }
 
 }
